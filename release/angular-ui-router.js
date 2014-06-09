@@ -3020,7 +3020,8 @@ function $StateActiveDirective($state, $stateParams, $interpolate) {
 
       // Update route state
       function update() {
-        if ($state.$current.self === state && matchesParams()) {
+        var pom = ($state.$current.self.name.indexOf(state.name)>-1); 
+        if (pom && matchesParams()) {
           $element.addClass(activeClass);
         } else {
           $element.removeClass(activeClass);
